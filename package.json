@@ -1,0 +1,27 @@
+{
+  "name": "fumiko-ts",
+  "version": "1.0.0",
+  "description": "A all-in-one discord bot for small and big server.",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "giti": "gitignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugo-berendi/fumiko-ts.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "eris",
+    "fumiko",
+    "typescript"
+  ],
+  "author": "Kamachi <hugo.berendi@kamachi.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugo-berendi/fumiko-ts/issues"
+  },
+  "homepage": "https://github.com/hugo-berendi/fumiko-ts#readme"
+}
