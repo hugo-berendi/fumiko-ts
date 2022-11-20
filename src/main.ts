@@ -1,14 +1,56 @@
-import * as eris from "eris";
-import * as dotenv from "dotenv";
+import * as hym from '@harmonyland/harmony'
+import { type StatusType, type ActivityGame, ActivityTypes } from '@harmonyland/harmony'
+import * as dotenv from 'dotenv'
+import path from 'path'
+import fs from 'fs'
+import commands from './commands'
 
-dotenv.config();
+dotenv.config()
 
-const token: string = process.env.DISCORD_TOKEN as string;
+const token: string = process.env.DISCORD_TOKEN as string
 
-const bot = new eris.Client(token);
+const client = new hym.Client()
 
-bot.on("ready", () => {
-  console.log(`Connected as ${bot.user.username}#${bot.user.discriminator}`);
+const guildId: string = '990521467215171594'
+
+const commandsPath = path.join(__dirname, 'commands')
+const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.ts'))
+
+client.on('ready', () => {
+
+  const status = 'dnd' as StatusType
+  const activity = {
+    name: '/help',
+    type: ActivityTypes.PLAYING
+  } as ActivityGame
+
+  const presence = new hym.ClientPresence({
+    status: status,
+    activity: activity
+  })
+
+  client.setPresence(presence)
+
+  commands.forEach(command => {
+    client.slash.commands.create(command, guildId)
+      .then((cmd) => console.log(`Created Slash Command ${cmd.name}!`))
+      .catch((err) => console.error(err))
+  })
+
+  console.log(`Connected as ${client.user?.tag}!`)
 })
 
-bot.connect()
+client.on('interactionCreate', (interaction: hym.Interaction) => {
+  for (const file of commandFiles) {
+    const filePath = path.join(commandsPath, file)
+    const command = require(filePath).default
+
+    const idata = interaction.data as hym.InteractionApplicationCommandData
+
+    if (idata.name == command.data.name) {
+      command.callback(interaction)
+    }
+  }
+})
+
+client.connect(token, hym.Intents.All)
