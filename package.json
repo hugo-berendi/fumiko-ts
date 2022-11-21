@@ -27,6 +27,8 @@
   "homepage": "https://github.com/hugo-berendi/fumiko-ts#readme",
   "dependencies": {
     "@harmonyland/harmony": "^2.6.1",
+    "akaneko": "^5.2.3",
+    "discord-phub": "^1.0.7",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",

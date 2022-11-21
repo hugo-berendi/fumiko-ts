@@ -4,7 +4,8 @@ import * as cmdb from '../modules/commandBuilder'
 const commandData = {
   name: 'uwu',
   description: 'UwU!',
-  options: [] as any[]
+  options: [] as any[],
+  choices: [] as any[]
 }
 
 function commandCallback(interaction: hym.Interaction) {
