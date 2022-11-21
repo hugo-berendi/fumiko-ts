@@ -74,7 +74,7 @@ const commandData = {
 
 function commandCallback(interaction: hym.Interaction) {
 	if (interaction.isApplicationCommand()) {
-		if (interaction.subCommand == 'nsfw') {
+		if (interaction.subCommand == 'hentai') {
 			const emb = new hym.Embed({
 				title: 'Hentai',
 				description: `Type: ${interaction.option.name}`,
