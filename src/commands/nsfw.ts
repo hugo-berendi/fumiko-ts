@@ -1,9 +1,6 @@
 import * as hym from '@harmonyland/harmony'
 import * as cmdb from '../modules/commandBuilder'
 import akaneko from 'akaneko'
-import { RandomPHUB } from 'discord-phub'
-
-const porn = new RandomPHUB(true)
 
 const hentai = akaneko.nsfw
 
