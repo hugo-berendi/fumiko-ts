@@ -28,6 +28,7 @@
   "dependencies": {
     "@harmonyland/harmony": "^2.6.1",
     "akaneko": "^5.2.3",
+    "anilist-node": "^1.13.0",
     "discord-phub": "^1.0.7",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
