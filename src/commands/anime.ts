@@ -70,4 +70,3 @@ async function commandCallback(interaction: hym.Interaction) {
 const animeCommand = new cmdb.SlashCommandBuilder(commandData, commandCallback)
 
 export default animeCommand
-
