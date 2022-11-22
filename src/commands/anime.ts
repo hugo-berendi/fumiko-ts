@@ -34,20 +34,18 @@ async function commandCallback(interaction: hym.Interaction) {
             const anime_data = await Anilist.searchEntry.anime(name)
 			const media = anime_data.media
 
-            const embs: hym.Embed[] = []
-
             if (!media) {
                 const emb = new hym.Embed()
                     .setDescription('Error (media)')
                 return interaction.respond({
-                    embeds: embs,
+                    embeds: [emb],
                 })
             }
             if (!media[0]) {
                     const emb = new hym.Embed()
                         .setDescription('Error (entry)')
                     return interaction.respond({
-                        embeds: embs,
+                        embeds: [emb],
                     })
                 }
                 Anilist.media.anime(media[0].id).then(anime => {
@@ -59,7 +57,7 @@ async function commandCallback(interaction: hym.Interaction) {
                         .setColor(color)
                         .setThumbnail(anime.coverImage.large)
                     return interaction.respond({
-                        embeds: embs,
+                        embeds: [emb],
                     })
                 })
 		}
