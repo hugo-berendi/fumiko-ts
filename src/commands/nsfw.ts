@@ -72,6 +72,7 @@ const commandData = {
 	choices: [] as any[]
 }
 
+
 function commandCallback(interaction: hym.Interaction) {
 	if (interaction.isApplicationCommand()) {
 		if (interaction.subCommand == 'hentai') {
