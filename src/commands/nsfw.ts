@@ -179,11 +179,8 @@ function commandCallback(interaction: hym.Interaction) {
 			const tag: string = interaction.options[0].value
 			const emb = new hym.Embed({
 				title: 'Hentai',
-				description: `Type: ${tag}`,
+				description: `Type: ${tag}, ${chooseHentai(tag)}`,
 				color: hym.ColorUtil.colorList.DARK_VIVID_PINK,
-				image: {
-					url: chooseHentai(tag)
-				}
 			})
 
 			return interaction.respond({
