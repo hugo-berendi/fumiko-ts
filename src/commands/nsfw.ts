@@ -121,55 +121,55 @@ const commandData = {
 	choices: [] as any[]
 }
 
-function chooseHentai(type: string) {
+async function chooseHentai(type: string) {
 	if (type == 'ass') {
-		return akaneko.nsfw.ass()
+		return await akaneko.nsfw.ass()
 	} else if (type == 'bdsm') {
-		return akaneko.nsfw.bdsm()
+		return await akaneko.nsfw.bdsm()
 	} else if (type == 'blowjob') {
-		return akaneko.nsfw.blowjob()
+		return await akaneko.nsfw.blowjob()
 	} else if (type == 'cum') {
-		return akaneko.nsfw.cum()
+		return await akaneko.nsfw.cum()
 	} else if (type == 'doujin') {
-		return akaneko.nsfw.doujin()
+		return await akaneko.nsfw.doujin()
 	} else if (type == 'feet') {
-		return akaneko.nsfw.feet()
+		return await akaneko.nsfw.feet()
 	} else if (type == 'femdom') {
-		return akaneko.nsfw.femdom()
+		return await akaneko.nsfw.femdom()
 	} else if (type == 'foxgirl') {
-		return akaneko.nsfw.foxgirl()
+		return await akaneko.nsfw.foxgirl()
 	} else if (type == 'gifs') {
-		return akaneko.nsfw.gifs()
+		return await akaneko.nsfw.gifs()
 	} else if (type == 'glasses') {
-		return akaneko.nsfw.glasses()
+		return await akaneko.nsfw.glasses()
 	} else if (type == 'hentai') {
-		return akaneko.nsfw.hentai()
+		return await akaneko.nsfw.hentai()
 	} else if (type == 'masturbation') {
-		return akaneko.nsfw.masturbation()
+		return await akaneko.nsfw.masturbation()
 	} else if (type == 'netorare') {
-		return akaneko.nsfw.netorare()
+		return await akaneko.nsfw.netorare()
 	} else if (type == 'orgy') {
-		return akaneko.nsfw.orgy()
+		return await akaneko.nsfw.orgy()
 	} else if (type == 'panties') {
-		return akaneko.nsfw.panties()
+		return await akaneko.nsfw.panties()
 	} else if (type == 'pussy') {
-		return akaneko.nsfw.pussy()
+		return await akaneko.nsfw.pussy()
 	} else if (type == 'school') {
-		return akaneko.nsfw.school()
+		return await akaneko.nsfw.school()
 	} else if (type == 'succubus') {
-		return akaneko.nsfw.succubus()
+		return await akaneko.nsfw.succubus()
 	} else if (type == 'tentacles') {
-		return akaneko.nsfw.tentacles()
+		return await akaneko.nsfw.tentacles()
 	} else if (type == 'thighs') {
-		return akaneko.nsfw.thighs()
+		return await akaneko.nsfw.thighs()
 	} else if (type == 'uglyBastard') {
-		return akaneko.nsfw.uglyBastard()
+		return await akaneko.nsfw.uglyBastard()
 	} else if (type == 'uniform') {
-		return akaneko.nsfw.uniform()
+		return await akaneko.nsfw.uniform()
 	} else if (type == 'yuri') {
-		return akaneko.nsfw.yuri()
+		return await akaneko.nsfw.yuri()
 	} else if (type == 'zettaiRyouiki') {
-		return akaneko.nsfw.zettaiRyouiki()
+		return await akaneko.nsfw.zettaiRyouiki()
 	}
 }
 
