@@ -181,7 +181,7 @@ function commandCallback(interaction: hym.Interaction) {
 				title: 'Hentai',
 				description: `Type: ${interaction.options[0].value}`,
 				image: {
-					url: chooseHentai(interaction.options[1].value)
+					url: chooseHentai(interaction.options[0].value)
 				}
 			})
 
