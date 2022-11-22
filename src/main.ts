@@ -40,7 +40,7 @@ client.on('ready', () => {
   console.log(`Connected as ${client.user?.tag}!`)
 })
 
-client.on('interactionCreate', (interaction: hym.Interaction) => {
+client.on('interactionCreate', async (interaction: hym.Interaction) => {
   for (const file of commandFiles) {
     const filePath = path.join(commandsPath, file)
     const command = require(filePath).default
@@ -48,7 +48,7 @@ client.on('interactionCreate', (interaction: hym.Interaction) => {
     const idata = interaction.data as hym.InteractionApplicationCommandData
 
     if (idata.name == command.data.name) {
-      command.callback(interaction)
+      await command.callback(interaction)
     }
   }
 })

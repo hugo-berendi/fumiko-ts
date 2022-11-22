@@ -173,13 +173,13 @@ async function chooseHentai(type: string) {
 	}
 }
 
-function commandCallback(interaction: hym.Interaction) {
+async function commandCallback(interaction: hym.Interaction) {
 	if (interaction.isApplicationCommand()) {
 		if (interaction.subCommand == 'hentai') {
 			const tag: string = interaction.options[0].value
 			const emb = new hym.Embed({
 				title: 'Hentai',
-				description: `Type: ${tag}, ${chooseHentai(tag)}`,
+				description: `Type: ${tag}, ${await chooseHentai(tag)}`,
 				color: hym.ColorUtil.colorList.DARK_VIVID_PINK,
 			})
 
