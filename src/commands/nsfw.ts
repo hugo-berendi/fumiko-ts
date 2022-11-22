@@ -189,6 +189,7 @@ function commandCallback(interaction: hym.Interaction) {
 	}
 }
 
+
 const nsfwCommand = new cmdb.SlashCommandBuilder(commandData, commandCallback)
 
 export default nsfwCommand
