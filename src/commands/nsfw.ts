@@ -179,8 +179,11 @@ async function commandCallback(interaction: hym.Interaction) {
 			const tag: string = interaction.options[0].value
 			const emb = new hym.Embed({
 				title: 'Hentai',
-				description: `Type: ${tag}, ${await chooseHentai(tag)}`,
+				description: `Type: ${tag}`,
 				color: hym.ColorUtil.colorList.DARK_VIVID_PINK,
+				image: {
+					url: await chooseHentai(tag)
+				}
 			})
 
 			return interaction.respond({
