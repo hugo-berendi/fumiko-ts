@@ -9,7 +9,6 @@ const commandData = {
 		{
 			name: 'hentai',
 			description: 'Sends a hentai image',
-			required: false,
 			type: hym.SlashCommandOptionType.SUB_COMMAND,
 			options: [
 				{
@@ -177,11 +176,13 @@ function chooseHentai(type: string) {
 function commandCallback(interaction: hym.Interaction) {
 	if (interaction.isApplicationCommand()) {
 		if (interaction.subCommand == 'hentai') {
+			const option = interaction.options[0].options as hym.InteractionApplicationCommandOption[]
+			const tag = option[0].value
 			const emb = new hym.Embed({
 				title: 'Hentai',
-				description: `Type: ${interaction.options[0].value}`,
+				description: `Type: ${tag}`,
 				image: {
-					url: chooseHentai(interaction.options[0].value)
+					url: chooseHentai(tag)
 				}
 			})
 
