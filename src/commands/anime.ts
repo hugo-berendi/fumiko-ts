@@ -50,12 +50,15 @@ async function commandCallback(interaction: hym.Interaction) {
                 }
                 Anilist.media.anime(media[0].id).then(anime => {
                     const color: number = anime.coverImage.color.replace('#', '0x') as unknown as number
-                    const emb = new hym.Embed()
-                        .setDescription(anime.description)
-                        .setTitle(anime.title.native)
-                        .setURL(anime.siteUrl)
-                        .setColor(color)
-                        .setThumbnail(anime.coverImage.large)
+                    const emb = new hym.Embed({
+                        title: anime.title.native,
+                        description: anime.description,
+                        color: color,
+                        url: anime.siteUrl,
+                        thumbnail: {
+                            url: anime.coverImage.large
+                        }
+                    })
                     return interaction.respond({
                         embeds: [emb],
                     })
