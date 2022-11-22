@@ -77,9 +77,9 @@ function commandCallback(interaction: hym.Interaction) {
 		if (interaction.subCommand == 'hentai') {
 			const emb = new hym.Embed({
 				title: 'Hentai',
-				description: `Type: ${interaction.option.name}`,
+				description: `Type: ${interaction.options[1].name}`,
 				image: {
-					url: `${eval(`hentai.${interaction.option.name}()`)}`
+					url: `${eval(`hentai.${interaction.options[1].value}()`)}`
 				}
 			})
 
