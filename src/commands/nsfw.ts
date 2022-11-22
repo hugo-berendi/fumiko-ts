@@ -176,8 +176,9 @@ function chooseHentai(type: string) {
 function commandCallback(interaction: hym.Interaction) {
 	if (interaction.isApplicationCommand()) {
 		if (interaction.subCommand == 'hentai') {
-			const option = interaction.options[0].options as hym.InteractionApplicationCommandOption[]
-			const tag = option[0].value
+			const iOption = interaction.options as hym.InteractionApplicationCommandOption[]
+			const options = iOption[0].options as hym.InteractionApplicationCommandOption[]
+			const tag = options[0].value
 			const emb = new hym.Embed({
 				title: 'Hentai',
 				description: `Type: ${tag}`,
