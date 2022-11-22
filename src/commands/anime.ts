@@ -39,15 +39,18 @@ async function commandCallback(interaction: hym.Interaction) {
             if (!media) {
                 const emb = new hym.Embed()
                     .setDescription('Error (media)')
-                embs.push(emb)
+                return interaction.respond({
+                    embeds: embs,
+                })
             }
-            media.forEach(async entry => {
-                if (!entry) {
+            if (!media[0]) {
                     const emb = new hym.Embed()
                         .setDescription('Error (entry)')
-                    embs.push(emb)
+                    return interaction.respond({
+                        embeds: embs,
+                    })
                 }
-                Anilist.media.anime(entry.id).then(anime => {
+                Anilist.media.anime(media[0].id).then(anime => {
                     const color: number = anime.coverImage.color.replace('#', '0x') as unknown as number
                     const emb = new hym.Embed()
                         .setDescription(anime.description)
@@ -55,13 +58,10 @@ async function commandCallback(interaction: hym.Interaction) {
                         .setURL(anime.siteUrl)
                         .setColor(color)
                         .setThumbnail(anime.coverImage.large)
-                    embs.push(emb)
+                    return interaction.respond({
+                        embeds: embs,
+                    })
                 })
-            })	
-
-			return interaction.respond({
-				embeds: embs,
-			})
 		}
 	}
 }
